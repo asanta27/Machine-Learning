@@ -38,12 +38,14 @@ def check_data(hypothesis_params, data_features):
     for i in range(len(data_features)):
         return False if len(hypothesis_params) != len(data_features[i]) else True
 
+
 def hypothesis(theta, x):
     sum_hypothesis = 0
     # Hypothesis = (θ1 * x1) + (θ2 * x2) + (θ3 * x3) + ...
     for i in range(len(theta)):
         sum_hypothesis +=  theta[i] * x[i]
     return sum_hypothesis
+
 
 def gradient_descent(theta, training_data):
     if not check_data(theta, training_data):
@@ -77,6 +79,7 @@ def gradient_descent(theta, training_data):
             return "ERROR: Rate too large"
         else:
             theta = new_theta
+
 
 def test():
     # Hyp length must equal the length
